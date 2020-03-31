@@ -1,0 +1,40 @@
+<table id="example1" class="table table-striped">
+                      <thead>
+                      <tr>
+        <th>No</th>
+		<th>Nomor Survey</th>
+		<th>Nama Kepala Rumah Tangga</th>
+		<th>Nomor KTP Rumah Tinggal</th>
+		<th>Alamat Rumah Tinggal </th>
+		<th>Aksi</th>
+        <th>Modul</th>
+        </thead>
+        <tbody>
+            </tr><?php
+            foreach ($rumtinggal_data as $rumtinggal)
+            {
+                ?>
+                <tr>
+			<td width="80px"><?php echo ++$start ?></td>
+			<td><?php echo $rumtinggal->no_survey ?></td>
+			<td><?php echo $rumtinggal->nama_kepalarumahtangga ?></td>
+			<td><?php echo $rumtinggal->no_ktp_kepalarumahtangga ?></a></td>
+			<td><?php echo $rumtinggal->alamat_rumahtinggal ?></a></td>
+			<td style="text-align:center" width="150px">
+				<?php
+                echo anchor(site_url('admin/rumtinggal/baca/'.$rumtinggal->id_rumahtinggal),'Edit'); 
+				echo ' | '; 
+				echo anchor(site_url('admin/rumtinggal/edit/'.$rumtinggal->id_rumahtinggal),'Edit'); 
+				echo ' | '; 
+				echo anchor(site_url('admin/rumtinggal/hapus/'.$rumtinggal->id_rumahtinggal),'Hapus','onclick="javasciprt: return confirm(\'Yakin Ingin menghapus data ini ?\')"'); 
+				?>
+			</td>
+						<td style="text-align:center" width="200px">
+				<?php
+                echo anchor(site_url('admin/rumtinggal/baca/'.$rumtinggal->id_rumahtinggal),'Edit'); 
+				echo ' | '; 
+				echo anchor(site_url('admin/rumtinggal/edit/'.$rumtinggal->id_rumahtinggal),'Edit'); 
+				echo ' | '; 
+				echo anchor(site_url('admin/rumtinggal/hapus/'.$rumtinggal->id_rumahtinggal),'Hapus','onclick="javasciprt: return confirm(\'Yakin Ingin menghapus data ini ?\')"'); 
+				?>
+			</td>
